@@ -11,4 +11,8 @@ export class UsersService {
     this.http.get('http://localhost:63040/api/users')
     .subscribe(res => {console.log(res)});
   }
+  register(model){
+    this.http.post('http://localhost:63040/api/users/register',model)
+    .subscribe(res => console.log(res));
+  }
 }
