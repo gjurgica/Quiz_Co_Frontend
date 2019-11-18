@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { UsersService } from './users.service';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +7,8 @@ import { UsersService } from './users.service';
 })
 export class AppComponent {
   title = 'quiz-frontend';
-  constructor(private api:UsersService) { }
-  get(){
-    this.api.getUsers();
+  constructor() { }
+  ngOnInit() {
+
   }
 }

@@ -11,7 +11,7 @@ import { UsersService } from './users.service';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { AuthService } from './auth.service';
+import { appRoutes } from './routes';
 
 @NgModule({
   declarations: [
@@ -28,15 +28,10 @@ import { AuthService } from './auth.service';
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
-    RouterModule.forRoot([
-      {path:'',component:HomeComponent},
-      {path:'login',component:LoginComponent},
-      {path:'register',component:RegisterComponent}
-    ])
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
-    UsersService,
-    AuthService
+    UsersService
   ],
   bootstrap: [AppComponent]
 })

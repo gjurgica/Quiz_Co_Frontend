@@ -64,7 +64,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "quiz-frontend:build"
+            "browserTarget": "quiz-frontend:build",
+            "port": 3000
           },
           "configurations": {
             "production": {
