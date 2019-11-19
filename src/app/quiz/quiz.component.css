@@ -1,0 +1,25 @@
+.quiz{
+    margin: 20px;;
+}
+a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bolder;
+    margin: 10px;
+}
+img{
+    margin: 10px;
+    border-radius: 16px;
+    max-height: 100px;
+}
+li{
+    background-color: #003b46;
+}
+.new{
+    margin-top: 10px;
+}
+.play{
+    float: right;
+    margin-top: 25px;
+}

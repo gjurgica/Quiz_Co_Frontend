@@ -1,0 +1,12 @@
+<div class="quiz">
+    <ul class="list-group">
+        <li *ngFor=" let quiz of quizes" class="list-group-item">
+            <span class="pull-left">
+                <img src="{{quiz.imageUrl}}" class="img-responsive"/>
+             </span>
+           <a href="#">{{quiz.title}}</a>
+           <button class="btn btn-danger play">Play Now</button>
+        </li>
+    </ul>
+    <button class="btn btn-info new">New Quiz</button>
+    </div>
