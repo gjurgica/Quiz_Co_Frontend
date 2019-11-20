@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { QuizModel } from './quiz.model';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { QuizService } from './quiz.service';
 
 @Component({
   selector: 'app-quiz',
@@ -9,13 +10,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./quiz.component.css']
 })
 export class QuizComponent implements OnInit {
-  public quizes:QuizModel[];
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private api:QuizService) { }
   ngOnInit() {
-    this.http.get('http://localhost:63040/api/quiz').subscribe((data: any[]) => {
-      this.quizes = data;
-    }, error => console.log(error));
+    this.api.getAll();
   }
 
 }

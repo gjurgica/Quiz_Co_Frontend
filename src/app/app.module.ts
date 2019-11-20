@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { appRoutes } from './routes';
 import { QuizComponent } from './quiz/quiz.component';
+import { QuizService } from './quiz/quiz.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { QuizComponent } from './quiz/quiz.component';
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
-    UsersService
+    UsersService,
+    QuizService
   ],
   bootstrap: [AppComponent]
 })

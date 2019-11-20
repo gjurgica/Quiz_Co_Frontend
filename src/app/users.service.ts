@@ -6,11 +6,13 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class UsersService {
-
+public users = [];
   constructor(private http:HttpClient,private router: Router) { }
   getUsers(){
     this.http.get('http://localhost:63040/api/users')
-    .subscribe(res => {console.log(res)});
+    .subscribe((data: any[]) => {
+      this.users = data;
+    }, error => console.log(error));
   }
   register(model){
     this.http.post('http://localhost:63040/api/users/register',model)
