@@ -1,40 +1,43 @@
 <div class="limiter">
     <div class="container-login100">
+        <div *ngIf="isLoading">
+            <app-loading></app-loading>
+        </div>
         <div class="wrap-login100 p-t-85 p-b-20">
-            <form class="login100-form validate-form" [formGroup]="registerForm" (ngSubmit)="api.register(registerForm.value)">
+            <form class="login100-form" (ngSubmit)="onSubmit()" *ngIf="!isLoading">
                 <span class="login100-form-title p-b-70">
                     Register
                 </span>
                 <div class="wrap-input100 m-t-85 m-b-35">
-                    <input class="input100" type="text" id="firstName" name="firstName" formControlName="firstName">
+                    <input class="input100" type="text" name="firstName" required [(ngModel)]="registerModel.firstName">
                     <span class="focus-input100" data-placeholder="First Name"></span>
                 </div>
                 <div class="wrap-input100 m-t-85 m-b-35">
-                    <input class="input100" type="text" name="lastname" formControlName="lastName">
+                    <input class="input100" type="text" name="lastname" required [(ngModel)]="registerModel.lastName">
                     <span class="focus-input100" data-placeholder="Last Name"></span>
                 </div>
                 <div class="wrap-input100 m-t-85 m-b-35">
-                    <input class="input100" type="text" name="username"formControlName="userName">
+                    <input class="input100" type="text" name="username" required [(ngModel)]="registerModel.userName">
                     <span class="focus-input100" data-placeholder="Username"></span>
                 </div>
 
                 <div class="wrap-input100 m-t-85 m-b-35">
-                    <input class="input100" type="email" name="email" formControlName = "email">
+                    <input class="input100" type="email" name="email" required [(ngModel)]="registerModel.email">
                     <span class="focus-input100" data-placeholder="Email"></span>
                 </div>
 
                 <div class="wrap-input100 m-b-50">
-                    <input class="input100" type="password" name="password"formControlName="password">
+                    <input class="input100" type="password" name="password" required minlength="8" required [(ngModel)]="registerModel.password" >
                     <span class="focus-input100" data-placeholder="Password"></span>
                 </div>
 
                 <div class="wrap-input100 m-b-50">
-                    <input class="input100" type="password" name="confirmPassword" formControlName="confirmPassword">
+                    <input class="input100" type="password" name="confirmPassword" required [(ngModel)]="registerModel.confirmPassword">
                     <span class="focus-input100" data-placeholder="Confirm Password"></span>
                 </div>
 
                 <div class="container-login100-form-btn">
-                    <button class="login100-form-btn">
+                    <button class="login100-form-btn" type="submit">
                         Register
                     </button>
                 </div>

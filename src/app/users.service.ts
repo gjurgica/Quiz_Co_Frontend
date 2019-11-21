@@ -14,10 +14,4 @@ public users = [];
       this.users = data;
     }, error => console.log(error));
   }
-  register(model){
-    this.http.post('http://localhost:63040/api/users/register',model)
-    .subscribe((data: any) => {
-      this.router.navigate(['/home']);
-    }, error => console.log(error))
-  }
 }
