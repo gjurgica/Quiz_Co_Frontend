@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RegisterModel } from './register.model';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -15,14 +16,16 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
     this.registerModel = new RegisterModel();
   }
-  public onSubmit() {
-    this.isLoading = true
+  public onSubmit(form:NgForm) {
+    this.isLoading = true;
+    form.reset();
     this.http.post<RegisterModel>('http://localhost:63040/api/users/register',this.registerModel)
     .subscribe((data: any) => {
+      localStorage.setItem("userName", data.userName);
       localStorage.setItem("token", data.token);
-      localStorage.setItem("user", data.userName);
+      console.log(JSON.stringify(data))
       this.router.navigate(['/']);
-      this.isLoading = false
+      this.isLoading = false     
     }, error => {
       console.log(error)
       this.isLoading = false
