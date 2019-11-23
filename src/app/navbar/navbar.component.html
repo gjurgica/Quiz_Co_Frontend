@@ -14,8 +14,9 @@
             <a href="#" routerLinkActive="active" class="nav-item nav-link" tabindex="-1">Reports</a>
         </div>
         <div class="navbar-nav ml-auto">
-            <a routerLink="/login" class="nav-item nav-link">Login</a>
-            <a routerLink="/register" class="nav-item nav-link">Register</a>
+            <a routerLink="/login" *ngIf="!token" class="nav-item nav-link">Login</a>
+            <a routerLink="/register" *ngIf="!token" class="nav-item nav-link">Register</a>
+            <a routerLink="/login" *ngIf="token" class="nav-item nav-link">Logout</a>
         </div>
     </div>
 </nav>

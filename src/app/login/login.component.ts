@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginModel } from './login.model';
-import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import { UsersService } from '../users.service';
 
 
 @Component({
@@ -11,24 +9,14 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  public loginModel: LoginModel;
-  isLoading = false;
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private api:UsersService) { }
 
   ngOnInit() {
-    this.loginModel = new LoginModel();
+    this.api.loginModel;
+    this.api.onSubmit();
   }
-  public onSubmit(form:NgForm) {
-    this.isLoading = true;
+  onReset(form:NgForm){
     form.reset();
-    this.http.post('http://localhost:63040/api/users/login', this.loginModel).subscribe((data: any) => {
-      localStorage.setItem("userName", data.userName);
-      localStorage.setItem("token", data.token);
-      console.log(JSON.stringify(data))
-      this.router.navigate(['/']);
-      this.isLoading = false
-    }, error => console.log(error));
-    this.isLoading = false
   }
 
 }
