@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsersService } from '../users.service';
 
 @Component({
   selector: 'app-navbar',
@@ -6,12 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-public token = '';
-  constructor() { }
+  constructor(private api:UsersService) { }
   public isMenuCollapsed = true;
 
   ngOnInit() {
-    this.token = localStorage.getItem('token');
+    this.api.token;
+    this.api.user;
+    this.api.logout();
   }
 
 }
