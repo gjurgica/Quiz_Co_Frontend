@@ -4,7 +4,7 @@
                     <app-loading></app-loading>
                 </div>
         <div class="wrap-login100 p-t-85 p-b-20">
-            <form class="login100-form validate-form" #loginForm="ngForm" (ngSubmit)="api.onSubmit(); onReset(loginForm)" *ngIf="!isLoading">
+            <form class="login100-form validate-form" #loginForm="ngForm" (ngSubmit)="api.login(); onReset(loginForm)" *ngIf="!isLoading">
                 <span class="login100-form-title p-b-70">
                     Welcome
                 </span>
@@ -50,7 +50,7 @@
                             Don’t have an account?
                         </span>
 
-                        <a href="#" class="txt2">
+                        <a routerLink="/register" class="txt2">
                             Sign up
                         </a>
                     </li>

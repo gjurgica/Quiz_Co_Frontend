@@ -1,0 +1,29 @@
+.body-content{
+    padding-left:15px;
+    padding-right:15px;
+    margin-top: 20px;
+
+}
+.post-header {
+    background-color: rgba(33,33,33,0.7);
+    padding: 8px 0 24px 24px;
+    color: #ddd;
+}
+.post-index-content {
+    background-color: rgba(255,255,255,0.4);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2),0 6px 6px rgba(0,0,0,0.3);
+}
+.btn-submit {
+    background-color: #01094d;
+    color: #fff;
+    transition: ease-in 0 1s;
+    border-radius: 0px;
+}
+.btn-submit:hover {
+transition: ease-in 0 1s;
+background-color: #037dc4;
+color: #fff;
+}
+.control-label{
+    font-weight: bold;
+}

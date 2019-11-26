@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.api.loginModel;
-    this.api.onSubmit();
+    this.api.login();
   }
   onReset(form:NgForm){
     form.reset();
