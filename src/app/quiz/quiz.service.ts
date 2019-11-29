@@ -14,4 +14,10 @@ export class QuizService {
       this.quizes = data;
     }, error => console.log(error));
   }
+  createQuiz(quizModel){
+    this.http.post('http://localhost:63040/api/quiz/newquiz',quizModel).subscribe((data: any) => {
+      console.log(JSON.stringify(data))
+      this.router.navigate(['/newquestion']);
+    }, error => console.log(error));
+  }
 }

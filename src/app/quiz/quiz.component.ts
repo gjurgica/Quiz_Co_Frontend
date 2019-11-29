@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { QuizModel } from './quiz.model';
-import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
 import { QuizService } from './quiz.service';
+import { UsersService } from '../users.service';
 
 @Component({
   selector: 'app-quiz',
@@ -11,9 +9,10 @@ import { QuizService } from './quiz.service';
 })
 export class QuizComponent implements OnInit {
 
-  constructor(private api:QuizService) { }
+  constructor(private api:QuizService,private userApi:UsersService) { }
   ngOnInit() {
     this.api.getAll();
+    this.userApi.token;
   }
 
 }

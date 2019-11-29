@@ -8,5 +8,5 @@
            <button class="btn btn-danger play">Play Now</button>
         </li>
     </ul>
-    <button routerLink="/newquiz" class="btn btn-info new">New Quiz</button>
+    <button [disabled]="!userApi.token" routerLink="/newquiz" class="btn btn-info new">New Quiz</button>
     </div>

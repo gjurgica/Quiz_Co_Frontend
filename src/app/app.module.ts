@@ -16,6 +16,8 @@ import { QuizComponent } from './quiz/quiz.component';
 import { QuizService } from './quiz/quiz.service';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 import { NewquizComponent } from './newquiz/newquiz.component';
+import { NewquestionComponent } from './newquestion/newquestion.component';
+import { NewanswerComponent } from './newanswer/newanswer.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { NewquizComponent } from './newquiz/newquiz.component';
     RegisterComponent,
     QuizComponent,
     LoadingSpinnerComponent,
-    NewquizComponent
+    NewquizComponent,
+    NewquestionComponent,
+    NewanswerComponent
   ],
   imports: [
     BrowserModule,

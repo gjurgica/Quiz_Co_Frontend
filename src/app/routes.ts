@@ -3,6 +3,8 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { NewquizComponent } from './newquiz/newquiz.component';
+import { NewquestionComponent } from './newquestion/newquestion.component';
+import { NewanswerComponent } from './newanswer/newanswer.component';
 
 export const appRoutes: Routes = [
     {
@@ -20,6 +22,14 @@ export const appRoutes: Routes = [
       {
         path: 'newquiz',
         component: NewquizComponent
+      },
+      {
+        path: 'newquestion',
+        component: NewquestionComponent
+      },
+      {
+        path: 'newanswer',
+        component: NewanswerComponent
       },
       {
         path: '',
