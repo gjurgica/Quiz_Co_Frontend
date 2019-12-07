@@ -18,6 +18,9 @@ import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinne
 import { NewquizComponent } from './newquiz/newquiz.component';
 import { NewquestionComponent } from './newquestion/newquestion.component';
 import { NewanswerComponent } from './newanswer/newanswer.component';
+import { QuestionsComponent } from './questions/questions.component';
+import {MatFormFieldModule,MatInputModule,} from '@angular/material';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,8 @@ import { NewanswerComponent } from './newanswer/newanswer.component';
     LoadingSpinnerComponent,
     NewquizComponent,
     NewquestionComponent,
-    NewanswerComponent
+    NewanswerComponent,
+    QuestionsComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +43,10 @@ import { NewanswerComponent } from './newanswer/newanswer.component';
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    MatFormFieldModule,
+    MatInputModule,
+    MatExpansionModule
   ],
   providers: [
     UsersService,

@@ -5,7 +5,7 @@
                 <img src="{{quiz.imageUrl}}" class="img-responsive"/>
              </span>
            <a href="#">{{quiz.title}}</a>
-           <button class="btn btn-danger play">Play Now</button>
+           <a class="btn btn-danger play" [routerLink]="['/quiz',quiz.id]">Play Now</a>
         </li>
     </ul>
     <button [disabled]="!userApi.token" routerLink="/newquiz" class="btn btn-info new">New Quiz</button>

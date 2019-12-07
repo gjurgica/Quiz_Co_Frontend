@@ -1,0 +1,11 @@
+.question-body{
+    margin: 20px;
+}
+.panel{
+    background-color: rgba(0,59,70,0.4);
+}
+.text{
+    color: #626d71; 
+    font-weight: 900;
+    font-family: 'Orbitron', sans-serif;
+}
