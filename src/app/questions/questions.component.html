@@ -1,36 +1,24 @@
 <mat-accordion class="question-body">
     <mat-expansion-panel
-    *ngFor="let question of quizApi.quiz.questions;let i=index"
+    *ngFor="let question of questions;let i=index"
     class="panel"[expanded]="step === i" (opened)="setStep(i)" >
       <mat-expansion-panel-header>
         <mat-panel-title class="text">
-          First Question
+          {{question.content}}
         </mat-panel-title>
       </mat-expansion-panel-header>
-  
-      <mat-form-field>
-        <input matInput placeholder="First name">
-      </mat-form-field>
-  
-      <mat-form-field>
-        <input matInput placeholder="Age">
-      </mat-form-field>
+      <mat-radio-group
+      aria-labelledby="example-radio-group-label"
+      class="example-radio-group">
+      <mat-radio-button class="example-radio-button" *ngFor="let answer of question.answers"
+      [value]="answer">
+      {{answer.content}}
+    </mat-radio-button>
+  </mat-radio-group>
       <mat-action-row>
         <button mat-button class="btn-primary" (click)="nextStep()">Next</button>
       </mat-action-row>
     </mat-expansion-panel>
-    <mat-expansion-panel (opened)="panelOpenState = true"
-                         (closed)="panelOpenState = false">
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          Self aware panel
-        </mat-panel-title>
-        <mat-panel-description>
-          Currently I am {{panelOpenState ? 'open' : 'closed'}}
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-      <p>I'm visible because I am open</p>
-    </mat-expansion-panel>
-  </mat-accordion>
+    <a routerLink="/score"  class=" btn btn-primary">Finish</a>
   
   

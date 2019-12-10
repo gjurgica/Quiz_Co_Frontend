@@ -9,3 +9,15 @@
     font-weight: 900;
     font-family: 'Orbitron', sans-serif;
 }
+.mat-action-row{
+    justify-content: flex-end;
+}
+.mat-radio-group{
+    display:flex;
+    flex-direction: column;
+    margin: 10px;
+    color:rgb(169, 196, 238);
+}
+.btn{
+    margin-top: 10px;
+}

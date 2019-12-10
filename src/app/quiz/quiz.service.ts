@@ -19,11 +19,7 @@ export class QuizService {
     this.quizId = '';
   }
   getQuizById(id){
-    this.http.get('http://localhost:63040/api/quiz/${id}').subscribe((data: any) => {
-      this.quiz = data;
-      console.log(this.quiz);
-      this.router.navigate(['/questions']);
-    }, error => console.log(error));
+    return this.http.get('http://localhost:63040/api/quiz/1');
   }
   createQuiz(quizModel){
     this.http.post('http://localhost:63040/api/quiz/newquiz',quizModel).subscribe((data: any) => {

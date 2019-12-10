@@ -19,8 +19,9 @@ import { NewquizComponent } from './newquiz/newquiz.component';
 import { NewquestionComponent } from './newquestion/newquestion.component';
 import { NewanswerComponent } from './newanswer/newanswer.component';
 import { QuestionsComponent } from './questions/questions.component';
-import {MatFormFieldModule,MatInputModule,} from '@angular/material';
+import {MatFormFieldModule,MatInputModule,MatRadioModule,MatDialogModule} from '@angular/material';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { ScoreComponent } from './score/score.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
     NewquizComponent,
     NewquestionComponent,
     NewanswerComponent,
-    QuestionsComponent
+    QuestionsComponent,
+    ScoreComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +48,9 @@ import {MatExpansionModule} from '@angular/material/expansion';
     RouterModule.forRoot(appRoutes),
     MatFormFieldModule,
     MatInputModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatRadioModule,
+    MatDialogModule
   ],
   providers: [
     UsersService,

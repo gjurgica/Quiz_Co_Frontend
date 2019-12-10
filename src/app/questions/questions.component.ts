@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { QuizService } from '../quiz/quiz.service';
+import { ActivatedRoute } from '@angular/router';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-questions',
@@ -7,11 +9,19 @@ import { QuizService } from '../quiz/quiz.service';
   styleUrls: ['./questions.component.css']
 })
 export class QuestionsComponent implements OnInit {
-
-  constructor(private quizApi:QuizService) { }
-
+  id;
+  questions;
+  constructor(private quizApi:QuizService,private aRoute:ActivatedRoute,private dialog:MatDialog) { 
+  }
+  
   ngOnInit() {
-    this.quizApi.quiz;
+    this.id = this.aRoute.snapshot.paramMap.get('id');
+    if(this.id){
+      this.quizApi.getQuizById(this.id).subscribe(res => {
+        this.questions = res
+      console.log(this.questions)})
+    }
+    
   }
   step = 0;
 
@@ -26,5 +36,6 @@ export class QuestionsComponent implements OnInit {
   prevStep() {
     this.step--;
   }
+  
 
 }
