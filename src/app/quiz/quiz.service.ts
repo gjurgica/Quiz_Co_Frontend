@@ -18,8 +18,8 @@ export class QuizService {
     }, error => console.log(error));
     this.quizId = '';
   }
-  getQuizById(id){
-    return this.http.get('http://localhost:63040/api/quiz/1');
+  getQuizById(id: number){
+    return this.http.get('http://localhost:63040/api/quiz/' + id);
   }
   createQuiz(quizModel){
     this.http.post('http://localhost:63040/api/quiz/newquiz',quizModel).subscribe((data: any) => {

@@ -19,6 +19,7 @@ export class QuestionsComponent implements OnInit {
     if(this.id){
       this.quizApi.getQuizById(this.id).subscribe(res => {
         this.questions = res
+        console.log(this.id)
       console.log(this.questions)})
     }
     
