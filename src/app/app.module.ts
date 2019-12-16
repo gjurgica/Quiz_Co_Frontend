@@ -56,6 +56,7 @@ import { ScoreComponent } from './score/score.component';
     UsersService,
     QuizService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[ScoreComponent]
 })
 export class AppModule { }

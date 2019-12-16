@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { QuizService } from '../quiz/quiz.service';
 import { ActivatedRoute } from '@angular/router';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { ScoreComponent } from '../score/score.component';
 
 @Component({
   selector: 'app-questions',
@@ -11,6 +12,8 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 export class QuestionsComponent implements OnInit {
   id;
   questions;
+  selectedAnswer;
+  correct = 0;
   constructor(private quizApi:QuizService,private aRoute:ActivatedRoute,private dialog:MatDialog) { 
   }
   
@@ -32,11 +35,21 @@ export class QuestionsComponent implements OnInit {
 
   nextStep() {
     this.step++;
+    console.log(this.selectedAnswer);
+    if(this.selectedAnswer.isCorrect === true){
+      this.correct++;
+    }
   }
 
   prevStep() {
     this.step--;
   }
-  
+  finish(){
+    console.log(this.correct);
+    const dialogRef = this.dialog.open(ScoreComponent, {
+      data: {correct:this.correct,total:this.questions.length}
+    });
+
+  }
 
 }

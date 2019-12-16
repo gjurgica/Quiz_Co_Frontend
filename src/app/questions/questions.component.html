@@ -9,9 +9,10 @@
       </mat-expansion-panel-header>
       <mat-radio-group
       aria-labelledby="example-radio-group-label"
-      class="example-radio-group">
+      class="example-radio-group"
+      [(ngModel)]="selectedAnswer">
       <mat-radio-button class="example-radio-button" *ngFor="let answer of question.answers"
-      [value]="answer.isCorrect">
+      [value]="answer">
       {{answer.content}}
     </mat-radio-button>
   </mat-radio-group>
@@ -19,6 +20,6 @@
         <button mat-button class="btn-primary" (click)="nextStep()">Next</button>
       </mat-action-row>
     </mat-expansion-panel>
-    <a routerLink="/score"  class=" btn btn-primary">Finish</a>
+    <a  class=" btn btn-primary" (click)="finish()">Finish</a>
   
   

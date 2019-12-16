@@ -21,7 +21,8 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="Create" class="btn btn-submit" />
+                    <input type="submit" value="Create" class="btn btn-submit"
+                    [disabled]="!questionForm.valid" />
                 </div>
             </form>
         </div>
