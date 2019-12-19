@@ -13,6 +13,7 @@ export class ScoreComponent implements OnInit {
 
   ngOnInit() {
     this.data.correct;
+    this.data.total;
   }  
 
 }
