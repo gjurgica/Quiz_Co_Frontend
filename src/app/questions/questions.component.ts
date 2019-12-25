@@ -21,9 +21,7 @@ export class QuestionsComponent implements OnInit {
     this.id = this.aRoute.snapshot.paramMap.get('id');
     if(this.id){
       this.quizApi.getQuizById(this.id).subscribe(res => {
-        this.questions = res
-        console.log(this.id)
-      console.log(this.questions)})
+        this.questions = res})
     }
     
   }
@@ -35,7 +33,6 @@ export class QuestionsComponent implements OnInit {
 
   nextStep() {
     this.step++;
-    console.log(this.selectedAnswer);
     if(this.selectedAnswer.isCorrect === true){
       this.correct++;
     }
@@ -45,7 +42,6 @@ export class QuestionsComponent implements OnInit {
     this.step--;
   }
   finish(){
-    console.log(this.correct);
     const dialogRef = this.dialog.open(ScoreComponent, {
       data: {correct:this.correct,total:this.questions.length}
     });

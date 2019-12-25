@@ -19,7 +19,11 @@
     color: #cdcdc0;
 }
 .btn{
+    color: #626d71;
+}
+.create{
     color: #626d71; 
+    font-weight: bold; 
 }
 #menu li {
     float: left;

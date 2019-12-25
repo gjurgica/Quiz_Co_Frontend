@@ -17,7 +17,7 @@ export class NewquizComponent implements OnInit {
   ngOnInit() {
   }
   post(quizModel:QuizModel){
-    quizModel.userName = this.userApi.user;
+    quizModel.userName = this.userApi.userName;
     this.quizApi.createQuiz(quizModel);
     
   }

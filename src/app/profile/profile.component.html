@@ -1,0 +1,38 @@
+<div class="container body-content">
+    <div class="row post-header">
+        <div class="section-heading">
+            <span class="user-name"></span>
+        </div>
+    </div>
+    <div class="row user-profile">
+        <div class="col-md-4">
+            <img class="img-responsive" *ngIf="userApi.path" src="{{createImgPath(userApi.path)}}" />
+            <img class="img-responsive" *ngIf="!userApi.path" src="{{createImgPath(userApi.user.imageUrl.folderName)}}" />
+                <form enctype="multipart/form-data">
+                    <div id="upload">
+                        <label class="btn btn-default btn-file">
+                            Browse<input (change)="uploadPhoto()" #fileInput class="btn btn-back" type="file" name="photo" style="display:none" />
+                        </label>
+                    </div>
+                    <!--<div>
+                        <label>
+                            <input (click)="onUploadPhoto()" type="submit" value="Submit" id="btn-profile" class="btn btn-default" />
+                        </label>
+                    </div> -->
+                </form>
+        </div>
+        <div class="col-md-7">
+            <span class="user-name">{{userApi.user.userName}}</span>
+            <span class="user-email">{{userApi.user.email}}</span><br /><br />
+            <span><span style="font-weight:bold">Member since:</span> {{userApi.user.joined}}</span>
+        </div>
+                <div>
+                    <a ><i class="glyphicon glyphicon-pencil" style="font-size:18px"></i></a><br /><br />                   
+                </div>
+
+    </div>
+</div>
+
+<div>
+    <span id="heading-btn"></span>
+</div>

@@ -14,9 +14,13 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.api.loginModel;
     this.api.login();
+    this.api.path;
   }
   onReset(form:NgForm){
     form.reset();
+  }
+  public createImgPath = (serverPath: string) => {
+    return `http://localhost:63040/${serverPath}`;
   }
 
 }

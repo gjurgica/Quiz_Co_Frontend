@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import { Router } from '@angular/router';
 import { LoginModel } from './login/login.model';
 import { RegisterModel } from './register/register.model';
+import { UserModel } from './user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -10,16 +11,21 @@ import { RegisterModel } from './register/register.model';
 export class UsersService {
 public users = [];
 public token = '';
-public user = ''
+public userName = '';
+public user:UserModel;
 public loginModel = new LoginModel();
 public registerModel = new RegisterModel();
 isLoading = false;
+public path  = localStorage.getItem("imagePath");
   constructor(private http:HttpClient,private router: Router) { }
   getUsers(){
     this.http.get('http://localhost:63040/api/users')
     .subscribe((data: any[]) => {
       this.users = data;
     }, error => console.log(error));
+  }
+  getUser(){
+    return this.http.get('http://localhost:63040/api/users/' + this.userName);
   }
   login(){
     this.onSubmit('http://localhost:63040/api/users/login',this.loginModel);
@@ -30,11 +36,11 @@ isLoading = false;
   public onSubmit(httpString: string,model:any) {
     this.isLoading = true;
     this.http.post(httpString, model).subscribe((data: any) => {
+      this.user = data;
       localStorage.setItem("userName", data.userName);
       localStorage.setItem("token", data.token);
       this.token = localStorage.getItem('token');
-      this.user = localStorage.getItem('userName');
-      console.log(JSON.stringify(data))
+      this.userName = localStorage.getItem('userName');
       this.router.navigate(['/']);
       this.isLoading = false
     }, error => console.log(error));
@@ -45,6 +51,16 @@ isLoading = false;
     localStorage.removeItem("userName");
     localStorage.removeItem("token");
     this.token = localStorage.getItem('token');
-      this.user = localStorage.getItem('userName');
+      this.userName = localStorage.getItem('userName');
+  }
+  upload(file){
+    var formData = new FormData();
+    formData.append('photo',file);
+    this.http.post('http://localhost:63040/api/users/' + this.userName,formData)
+    .subscribe(data => {this.user.imageUrl = data;
+    localStorage.setItem("imagePath", this.user.imageUrl.folderName); 
+    this.path = localStorage.getItem("imagePath");
+    console.log(data)});
+
   }
 }

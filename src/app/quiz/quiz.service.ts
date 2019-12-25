@@ -14,7 +14,6 @@ export class QuizService {
   getAll(){
     this.http.get('http://localhost:63040/api/quiz').subscribe((data: any[]) => {
       this.quizes = data;
-      console.log(data);
     }, error => console.log(error));
     this.quizId = '';
   }
@@ -25,7 +24,6 @@ export class QuizService {
     this.http.post('http://localhost:63040/api/quiz/newquiz',quizModel).subscribe((data: any) => {
       localStorage.setItem("quizId", data.id);
       this.quizId = localStorage.getItem('quizId');
-      console.log(JSON.stringify(data))
       this.router.navigate(['/newquestion']);
     }, error => console.log(error));
   }

@@ -22,6 +22,7 @@ import { QuestionsComponent } from './questions/questions.component';
 import {MatFormFieldModule,MatInputModule,MatRadioModule,MatDialogModule} from '@angular/material';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { ScoreComponent } from './score/score.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ScoreComponent } from './score/score.component';
     NewquestionComponent,
     NewanswerComponent,
     QuestionsComponent,
-    ScoreComponent
+    ScoreComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

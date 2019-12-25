@@ -2,6 +2,8 @@
     <a routerLink="/" class="navbar-brand">
         Quiz_co
     </a>
+    <a *ngIf="!api.token" routerLink="/login" class="nav-item nav-link create">Create Quiz</a>
+    <a *ngIf="api.token" routerLink="/newquiz" class="nav-item nav-link create">Create Quiz</a>
     <button type="button" class="navbar-toggler" (click)="isMenuCollapsed = !isMenuCollapsed">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -11,10 +13,10 @@
             <a routerLink="/login" *ngIf="!api.token" class="nav-item nav-link">Login</a>
             <a routerLink="/register" *ngIf="!api.token" class="nav-item nav-link">Register</a>
             <div *ngIf="api.token" ngbDropdown class="d-inline-block">
-                    <button style="background-color:transparent" class="btn" id="dropdownBasic1" ngbDropdownToggle>{{api.user}}</button>
+                    <button style="background-color:transparent" class="btn" id="dropdownBasic1" ngbDropdownToggle>{{api.userName}}</button>
                     <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
                       <button ngbDropdownItem>My Quizzes</button>
-                      <button ngbDropdownItem>Profile</button>
+                      <button routerLink="/profile" (click)="api.getUser()"  ngbDropdownItem>Profile</button>
                       <button (click)="api.logout()" ngbDropdownItem>Logout</button>
                     </div>
                   </div>

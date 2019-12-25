@@ -7,6 +7,7 @@ import { NewquestionComponent } from './newquestion/newquestion.component';
 import { NewanswerComponent } from './newanswer/newanswer.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { ScoreComponent } from './score/score.component';
+import { ProfileComponent } from './profile/profile.component';
 
 export const appRoutes: Routes = [
   {
@@ -24,6 +25,10 @@ export const appRoutes: Routes = [
       {
         path: 'register',
         component: RegisterComponent
+      },
+      {
+        path: 'profile',
+        component: ProfileComponent
       },
       {
         path: 'newquiz',

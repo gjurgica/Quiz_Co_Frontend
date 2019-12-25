@@ -12,8 +12,9 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     this.api.token;
-    this.api.user;
+    this.api.userName;
     this.api.logout();
+    this.api.getUser();
   }
 
 }
