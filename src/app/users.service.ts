@@ -16,6 +16,7 @@ public user:UserModel;
 public loginModel = new LoginModel();
 public registerModel = new RegisterModel();
 isLoading = false;
+public check = '';
 public path  = localStorage.getItem("imagePath");
   constructor(private http:HttpClient,private router: Router) { }
   getUsers(){
@@ -39,6 +40,13 @@ public path  = localStorage.getItem("imagePath");
       this.user = data;
       localStorage.setItem("userName", data.userName);
       localStorage.setItem("token", data.token);
+      localStorage.setItem("check", data.userName);
+      this.check = localStorage.getItem("check");
+      if(this.check !== this.userName){
+        this.path = 'usersImages/' + data.imageUrl;
+        this.check = this.userName;
+        localStorage.setItem("imagePath", this.path);
+      }
       this.token = localStorage.getItem('token');
       this.userName = localStorage.getItem('userName');
       this.router.navigate(['/']);
@@ -51,7 +59,8 @@ public path  = localStorage.getItem("imagePath");
     localStorage.removeItem("userName");
     localStorage.removeItem("token");
     this.token = localStorage.getItem('token');
-      this.userName = localStorage.getItem('userName');
+    this.userName = localStorage.getItem('userName');
+    this.router.navigate(['/']);
   }
   upload(file){
     var formData = new FormData();

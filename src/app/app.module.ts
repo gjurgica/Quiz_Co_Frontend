@@ -23,6 +23,7 @@ import {MatFormFieldModule,MatInputModule,MatRadioModule,MatDialogModule} from '
 import {MatExpansionModule} from '@angular/material/expansion';
 import { ScoreComponent } from './score/score.component';
 import { ProfileComponent } from './profile/profile.component';
+import { ProfileEditComponent } from './profile-edit/profile-edit.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ProfileComponent } from './profile/profile.component';
     NewanswerComponent,
     QuestionsComponent,
     ScoreComponent,
-    ProfileComponent
+    ProfileComponent,
+    ProfileEditComponent
   ],
   imports: [
     BrowserModule,

@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
     this.api.loginModel;
     this.api.login();
     this.api.path;
+    this.api.check;
   }
   onReset(form:NgForm){
     form.reset();

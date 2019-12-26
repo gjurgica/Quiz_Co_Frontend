@@ -7,18 +7,13 @@
     <div class="row user-profile">
         <div class="col-md-4">
             <img class="img-responsive" *ngIf="userApi.path" src="{{createImgPath(userApi.path)}}" />
-            <img class="img-responsive" *ngIf="!userApi.path" src="{{createImgPath(userApi.user.imageUrl.folderName)}}" />
+            <img class="img-responsive" *ngIf="!userApi.path" src="{{createImgPath(usersImages/userApi.user.imageUrl)}}" />
                 <form enctype="multipart/form-data">
                     <div id="upload">
                         <label class="btn btn-default btn-file">
                             Browse<input (change)="uploadPhoto()" #fileInput class="btn btn-back" type="file" name="photo" style="display:none" />
                         </label>
                     </div>
-                    <!--<div>
-                        <label>
-                            <input (click)="onUploadPhoto()" type="submit" value="Submit" id="btn-profile" class="btn btn-default" />
-                        </label>
-                    </div> -->
                 </form>
         </div>
         <div class="col-md-7">
@@ -27,7 +22,9 @@
             <span><span style="font-weight:bold">Member since:</span> {{userApi.user.joined}}</span>
         </div>
                 <div>
-                    <a ><i class="glyphicon glyphicon-pencil" style="font-size:18px"></i></a><br /><br />                   
+                    <a routerLink="/profile-edit"><i class="material-icons">
+                        edit
+                        </i></a><br /><br />                   
                 </div>
 
     </div>
