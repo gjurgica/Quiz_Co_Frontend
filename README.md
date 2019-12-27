@@ -3,7 +3,8 @@ You can find backend project here: https://github.com/gjurgica/Quiz_Co_Backend
 Quiz_co allows you to create all kind of quizzes and  according to answers of the user displays the selected result. 
 
 ![login](https://user-images.githubusercontent.com/38158666/71438325-995be180-26f5-11ea-812d-e3deba6f7921.png)
-![profile](https://user-images.githubusercontent.com/38158666/71481898-1c695e80-2800-11ea-872e-cfaf3420d3d1.png)
+![profile](https://user-images.githubusercontent.com/38158666/71524397-a92e1e00-28cd-11ea-840a-a676052b0f4f.png)
+
 
 
 ![home](https://user-images.githubusercontent.com/38158666/70546388-7c5cd580-1b6f-11ea-90c7-ab9aa33723cf.png)
