@@ -4,7 +4,7 @@
             <span class="pull-left">
                 <img src="{{quiz.imageUrl}}" class="img-responsive"/>
              </span>
-           <a href="#">{{quiz.title}}</a>
+           <a [routerLink]="['/quiz',quiz.id]">{{quiz.title}}</a>
            <a class="btn btn-danger play" [routerLink]="['/quiz',quiz.id]">Play Now</a>
         </li>
     </ul>

@@ -3,4 +3,6 @@ export class UserModel {
     public imageUrl: any;
     public  email:string;
     public joined:any;
+    public firstName:string;
+    public lastName:string;
 }

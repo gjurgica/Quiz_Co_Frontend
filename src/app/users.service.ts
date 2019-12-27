@@ -12,7 +12,7 @@ export class UsersService {
 public users = [];
 public token = '';
 public userName = '';
-public user:UserModel;
+public user = new UserModel();
 public loginModel = new LoginModel();
 public registerModel = new RegisterModel();
 isLoading = false;
@@ -33,6 +33,17 @@ public path  = localStorage.getItem("imagePath");
   };
   register(){
     this.onSubmit('http://localhost:63040/api/users/register',this.registerModel);
+  }
+  update(){
+    this.http.post('http://localhost:63040/api/users/update',this.user)
+    .subscribe((data:any)  => {
+      this.user = data;
+      localStorage.setItem("userName", data.userName);
+      localStorage.setItem("check", data.userName);
+      this.check = localStorage.getItem("check");
+      this.userName = localStorage.getItem('userName');
+      console.log(this.user)
+    }, error => console.log(error))
   }
   public onSubmit(httpString: string,model:any) {
     this.isLoading = true;

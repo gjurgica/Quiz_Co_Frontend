@@ -4,7 +4,8 @@
             <app-loading></app-loading>
         </div>
         <div class="wrap-login100 p-t-85 p-b-20">
-            <form class="login100-form" #registerForm="ngForm" (ngSubmit)="api.register(); onReset(registerForm)"  *ngIf="!isLoading">
+            <form class="login100-form" #registerForm="ngForm" 
+            (ngSubmit)="api.register(); onReset(registerForm)"  *ngIf="!isLoading">
                 <span class="login100-form-title p-b-70">
                     Register
                 </span>

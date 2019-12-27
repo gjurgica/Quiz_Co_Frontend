@@ -1,5 +1,6 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { UsersService } from '../users.service';
+import { QuizService } from '../quiz/quiz.service';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { UsersService } from '../users.service';
 export class ProfileComponent implements OnInit {
   @ViewChild('fileInput',{static: true}) fileInput: ElementRef;
   public path;
-  constructor(private userApi:UsersService) { }
+  constructor(private userApi:UsersService,private quizApi:QuizService) { }
 
   ngOnInit() {
     this.userApi.user;

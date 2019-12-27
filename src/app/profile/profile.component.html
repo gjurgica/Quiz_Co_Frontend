@@ -5,16 +5,19 @@
         </div>
     </div>
     <div class="row user-profile">
-        <div class="col-md-4">
+        <div class="col-md-4 profile-pic">
             <img class="img-responsive" *ngIf="userApi.path" src="{{createImgPath(userApi.path)}}" />
             <img class="img-responsive" *ngIf="!userApi.path" src="{{createImgPath(usersImages/userApi.user.imageUrl)}}" />
+            <div class="edit"> 
                 <form enctype="multipart/form-data">
-                    <div id="upload">
-                        <label class="btn btn-default btn-file">
-                            Browse<input (change)="uploadPhoto()" #fileInput class="btn btn-back" type="file" name="photo" style="display:none" />
-                        </label>
-                    </div>
+                    <label for="uploadIcon">
+                         <i class="material-icons">
+                            photo_camera 
+                        </i>
+                        <input id="uploadIcon" (change)="uploadPhoto()" #fileInput  type="file" name="photo" style="display:none" />
+                    </label>
                 </form>
+            </div>
         </div>
         <div class="col-md-7">
             <span class="user-name">{{userApi.user.userName}}</span>

@@ -14,6 +14,7 @@ export class QuizService {
   getAll(){
     this.http.get('http://localhost:63040/api/quiz').subscribe((data: any[]) => {
       this.quizes = data;
+      console.log(this.quizes);
     }, error => console.log(error));
     this.quizId = '';
   }
