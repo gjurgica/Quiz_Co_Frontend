@@ -4,7 +4,7 @@ import { UsersService } from '../users.service';
 @Component({
   selector: 'app-profile-edit',
   templateUrl: './profile-edit.component.html',
-  styleUrls: ['../newquiz/newquiz.component.css']
+  styleUrls: ['./profile-edit.component.css']
 })
 export class ProfileEditComponent implements OnInit {
 
